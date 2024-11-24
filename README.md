@@ -7,9 +7,12 @@ This AI music recommendation webapp takes in user input for the mood and the eve
 
 The project can be run locally using streamlit run web.py
 
-## Files: 
+
+## Files:
 - web.py: main file that has gemini api call, spotify api call, and streamlit code
 - .env: environment file that holds my gemini api key, client-id, and client-secret (NOT ADDED TO REPOSITORY)
-- config.toml: added background color 
+- config.toml: added background color.
 
-**Important Note:** .env file is not in the repository as it holds sensitive information, like personal api keys. 
+### Important Notes:
+- .env file is not in the repository as it holds sensitive information, like personal api keys.
+- the config.toml file has to be inside a .streamlit folder to correctly work
