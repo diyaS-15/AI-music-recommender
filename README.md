@@ -10,7 +10,7 @@ The project can be run locally using streamlit run web.py
 
 ## Files:
 - web.py: main file that has gemini api call, spotify api call, and streamlit code
-- .env: environment file that holds my gemini api key, client-id, and client-secret (NOT ADDED TO REPOSITORY)
+- .env: environment file that holds my gemini api key, client-id, and client-secret 
 - config.toml: added background color.
 
 ### Important Notes:
