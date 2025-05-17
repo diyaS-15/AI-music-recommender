@@ -1,3 +1,5 @@
+# streamlit run web.py
+
 from dotenv import load_dotenv
 load_dotenv()
 import spotipy
@@ -54,7 +56,7 @@ st.title("AI Music Recommender")
 mood = st.text_input("Enter mood: ", value=" ")
 evt = st.text_input("Enter event or audience: ", value=" ")
 
-url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={myAPI}"
+url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={myAPI}"
 headers = {
     'Content-Type': 'application/json'
 }
@@ -62,7 +64,7 @@ data = {
     'contents': [
         {
             'parts': [
-                {'text': f"Without requiring additional information, recommend a {mood} song for {evt}."}
+                {'text': f"Without requiring additional information, recommend a {mood} song for {evt}. Additionally, only give a brief explaination of song choice."}
             ]
         }
     ]
@@ -77,6 +79,11 @@ print(response.text)
 print(response.status_code)
 
 result = search_for_song(token, responseDict["candidates"][0]["content"]["parts"][0]["text"])
-# track_id = result["id"]
-song_preview = result["preview_url"]
-st.audio(song_preview, format="audio/mp3")
+track_id = result["id"]
+preview_url = result["preview_url"]
+spotify_url = result["external_urls"]["spotify"]
+track_name = result["name"]
+artist_name = result["artists"][0]["name"]
+embed_url = f"https://open.spotify.com/embed/track/{track_id}"
+st.components.v1.iframe(embed_url, height=80)
+
