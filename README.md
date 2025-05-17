@@ -1,5 +1,5 @@
 # AI-music-recommender
-https://ai-song-recommender.streamlit.app/ 
+Live Demo: https://ai-song-recommender.streamlit.app/ 
 
 ## Description
 Welcome! This is music recommendation webapp where the user can input their current mood, intended event or audience and recieve a recommended song with a playable preview. This was done using Gemini Developer API, Spotify Web API, and Streamlit in Python.
