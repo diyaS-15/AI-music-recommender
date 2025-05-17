@@ -9,9 +9,13 @@ from requests import post,get
 import requests
 import json
 
-myAPI = os.getenv("MY_API_KEY")
-client_id = os.getenv("CLIENT_ID")
-client_secret = os.getenv("CLIENT_SECRET")
+#myAPI = os.getenv("MY_API_KEY")
+#client_id = os.getenv("CLIENT_ID")
+#client_secret = os.getenv("CLIENT_SECRET")
+
+myAPI = st.secrets["MY_API_KEY"]
+client_id = st.secrets["CLIENT_ID"]
+client_secret = st.secrets["CLIENT_SECRET"]
 
 def get_token():
     auth_string = client_id + ":" + client_secret
